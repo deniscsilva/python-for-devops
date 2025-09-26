@@ -1,0 +1,18 @@
+De preferência, a função deve ser autoexplicativa. Porem, quanto mais regras de negocio e mais especifico são as condições, mais difícil será para a pessoa entender o que esta acontecendo e porque.
+
+Neste caso, os comentários em funções se tornam muito úteis.
+
+Eu particularmente gosto de colocar um exemplo do dado de entrada via parâmetro, e como ele esta saindo lá no return.
+
+def get_name(fullname: str) -> str:
+    """
+    extract the name of the file by splitting using underscore '_'
+ 
+    [in]
+        >> fullname: example_1.2.3
+    [output]
+        >> name: example
+    """
+    name, *_ = fullname.split("_")
+    return name
+E claro, não adianta comentar e nunca mais mudar o comentário. Ele precisa sempre acompanhar o código e estar atualizado no que faz.

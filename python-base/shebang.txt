@@ -1,0 +1,19 @@
+Shebang
+Quando iniciamos um script, seja em Python, Bash ou qualquer outra linguagem, e muito comum definirmos um “shebang”.
+
+Essencialmente e uma linha que informa qual e o interpretador daquele pedaço de código.
+
+Quando não definimos um interpretador, o sistema vai tentar executar com a sessão atual que seria o Bash, mas obviamente o interpretador Bash não entende código Python.
+
+Você pode executar manualmente com:
+
+python shebang.py
+Isso vai forçar a execução diretamente com o interpretador do Python.
+
+Caso voce queira executar apenas com ./, será necessário definir o shebang.
+
+#!/usr/bin/env python3
+ 
+print("teste")
+Utilizamos o env para tornar o script portável, já que a localização do Python será diferente em todos os sistemas operacionais. Dessa forma, podemos executar o script assim:
+

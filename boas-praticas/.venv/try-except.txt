@@ -1,0 +1,29 @@
+Tratamento de erros
+O try-catch e um conceito usado em diversas linguagens de programação, então não deve ser novidade para você. Usamos isso para tratamento de erros, e consequentemente deixando a aplicação mais agradável para o usuário.
+
+Por exemplo, vamos tentar abrir um arquivo inexistente no filesystem:
+
+with open("file.txt") as f:
+    print(f)
+Sem um tratamento de erros, isso aqui e o que vai estourar para o usuário:
+
+Traceback (most recent call last):
+  File "/home/mateus/PycharmProjects/Python para DevOps/Best practices/try_catch.py", line 1, in <module>
+    with open("file.txt") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'file.txt'
+Você concorda que isso não e nem um pouco intuitivo? Ainda mais para um usuário final?
+
+Para nos, usuários técnicos, talvez seja fácil de interpretar o erro e tomar alguma ação… Mas já para o usuário não será a mesma coisa.
+
+Agora adicionando um bloco de tratamento de exceptions:
+
+try:
+    with open("file.txt") as f:
+        print(f)
+except FileNotFoundError:
+    print("File does not exist yet, please create it first!")
+└─[$]> python try_catch.py
+File does not exist yet, please create it first!
+Veja que para o usuário final, isso fica muito mais legível.
+
+Sempre que for criar um bloco de try-catch, faça-o adicionando somente o pedaço de código que pode gerar aquela exceção. Não coloque o bloco de código inteiro dentro do try-catch, caso contrario não ficara claro qual bloco pode gerar aquele erro.

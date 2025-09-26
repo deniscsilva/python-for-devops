@@ -1,0 +1,12 @@
+f-strings
+F-strings acho que e uma das minhas features preferidas, deixando o código muito bonito e fácil de ler com interpolação de strings.
+
+Era muito comum o uso de format ou outras funções de strings para interpolar as variáveis no meio de uma string.
+
+print("My name is {} and I'm {} years old".format("Mateus", 28))
+ 
+name="Mateus"
+age=28
+ 
+print(f"My name is {name} and I'm {age} years old")
+Com fstrings isso fica muito mais simples e mais legível.

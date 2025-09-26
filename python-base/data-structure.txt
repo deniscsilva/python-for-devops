@@ -1,0 +1,39 @@
+Listas, Tuplas e Sets
+E muito comum usarmos listas para tudo no nosso código, mesmo não sendo a opção mais pratica ou a melhor em termos de performance… Isso por praticidade, afinal e o que aprendemos na faculdade.
+
+Listas:
+
+Mantém a ordem dos elementos
+
+Mutável, pode ser modificada ao longo da sua existência
+
+Tuplas:
+
+Imutável, você não pode alterar itens
+
+Pode armazenar qualquer tipo de elemento, assim como Listas
+
+Sets:
+
+Itens novos podem ser adicionados, mas existentes não podem ser modificados
+
+Não ordenado
+
+Ótimo para testar a existência de algum item, ou usar funções de intersecção com outros sets
+
+name_list = ["Mateus", "Joao"]
+name_list.append("Gabriel")
+name_list.remove("Joao")
+ 
+print(name_list)
+ 
+# #
+ 
+name_list = ("Mateus", "Joao", 12)
+print(name_list)
+ 
+# #
+ 
+name_list_set = set(name_list)
+name_list_set.add("Teste")
+print(name_list_set)

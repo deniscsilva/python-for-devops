@@ -1,0 +1,54 @@
+Virtual environment
+Um Virtual Environment e um ambiente isolado para você desenvolver sua aplicação Python. Com isso você consegue “fugir” dos desafios de gerenciar bibliotecas a nível de sistema operacional.
+
+Se você rodar o comando abaixo, vera os diretórios onde as libs estão instaladas:
+
+pip list -v
+ 
+Package                 Version          Location                                         Installer
+----------------------- ---------------- ------------------------------------------------ ---------
+ansible                 10.7.0           /home/mateus/.local/lib/python3.10/site-packages pip
+ansible-core            2.17.7           /home/mateus/.local/lib/python3.10/site-packages pip
+appdirs                 1.4.4            /usr/lib/python3/dist-packages
+apsw                    3.36.0.post1     /usr/lib/python3/dist-packages
+attrs                   21.2.0           /usr/lib/python3/dist-packages
+backcall                0.2.0            /usr/lib/python3/dist-packages
+bcc                     0.18.0           /usr/lib/python3/dist-packages
+...
+...
+Veja que muitos estão instalados dentro do /usr/lib de forma global, e outros instalados no /home do meu usuário. Mas qual o problema disso? Gerenciar pacotes a nível de sistema operacional e um pesadelo.
+
+No caso acima, eu tenho o ansible-core na versao 2.17.7. Caso eu precise utilizar uma ferramenta escrita em Python que depende de alguma versão maior ou menor, vou ter problemas. E caso eu modifique a versão na camada de SO, e bem possível que estarei quebrando alguma outra parte do SO.
+
+E e exatamente por esse motivo que usamos um Virtual Environment por projeto, para podermos versionar tudo de forma isolada e garantir que uma não vai impactar no outro.
+
+O venv também e uma biblioteca do Python, que no meu caso instalei com:
+
+sudo apt install python3.10-venv -y
+Mas você também pode instalar pelo pip:
+
+pip install virtualenv
+Esse sim e um pacote que deve ser global na camada de SO.
+
+Para fazer o setup inicial, isso envolve alguns comandos.
+
+python3 -m venv venv
+Usamos o parâmetros -m venv para fazer a chamada da lib do venv, e depois passamos o parâmetro que e justamente o nome da pasta que ele deve criar. Algumas pessoas gostam de usar uma pasta oculta .venv.
+
+Ao executar um ls no diretorio, vera a mesma estrutura do FHS do Linux, sendo que o binário do Python estará lá dentro.
+
+└─[$]> ls venv    
+bin  include  lib  lib64  pyvenv.cfg
+Veja qual o binário do Python atualmente:
+
+└─[$]> which python3
+/usr/bin/python3
+Agora vamos ativar o Virtual Env:
+
+source venv/bin/activate
+ 
+└─[$]> which python3
+/tmp/venv/bin/python3
+Veja que agora, o executável do Python e outro, dentro do venv. As bibliotecas a partir desse momento também serão instaladas nessa pasta.
+
+Para desativar o venv, basta rodar o comando deactivate.

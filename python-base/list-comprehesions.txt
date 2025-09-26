@@ -1,0 +1,8 @@
+List comprehensions
+List comprehensions são utilizadas para construir listas a partir de outras listas, de forma simples e elegante.
+
+nomes = ("Mateus", "Joao", "Gabriel")
+ 
+nomes_upper = [ nome.upper() for nome in nomes if nome.startswith("M") ]
+print(nomes_upper)
+Pode parecer meio sem sentido, mas certamente você terá um caso de uso para isso na sua construção de scripts.

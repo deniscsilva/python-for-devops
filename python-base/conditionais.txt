@@ -1,0 +1,26 @@
+Condicionais
+Você já teve um spoiler na aula anterior sobre condicionais, então vamos aprofundar um pouco mais… Essencialmente vai ser uma expressão booleana que vai definir o fluxo de execução. Aqui e onde realmente começamos a adicionar lógica no nosso código.
+
+Igual: a == b
+
+Diferente: a != b
+
+Menor que: a < b
+
+Menor ou igual: a <= b
+
+Maior que: a > b
+
+Maior ou igual: a >= b
+
+Todas as condicionais podem utilizar os operadores and e or para “combar” com mais alguma expressão condicional.
+
+a = 99
+b = 99
+ 
+if a > b:
+    print(f"{a} is greater than {b}")
+elif a == b:
+    print(f"{a} equals to {b}")
+else:
+    print(f"{b} is not greater than {a}")

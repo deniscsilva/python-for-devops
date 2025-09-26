@@ -1,0 +1,19 @@
+Loops ou laços são usados para iterar em algum objeto como listas ou tuplas.
+
+nomes = ("Mateus", "Joao", "Gabriel")
+ 
+for nome in nomes:
+    print(nome)
+ 
+print("")
+ 
+for item in range(len(nomes)):
+    print(f"{item} - {nomes[item]}")
+ 
+print("")
+ 
+count = 0
+while count < len(nomes):
+    print(nomes[count])
+    count+=1
+Particularmente, opto sempre por utilizar o for por ser mais simples e com menor informação.
